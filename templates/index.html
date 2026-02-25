@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Hacker Simulation Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">
+            SYSTEM ROOT ACCESS - v2.4.1
+        </div>
+        
+        <div class="input-section">
+            <label for="target">TARGET IP/NAME: </label>
+            <input type="text" id="target" placeholder="Enter target...">
+            <button id="start-btn">START MISSION</button>
+            <button id="mutate-btn" disabled>MUTATE STRATEGY</button>
+            <span class="blinking-cursor">_</span>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="console">
+                <div id="console-output">
+                    <p>System initialized. Waiting for target...</p>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="progress-container">
+                    <p>BREACH PROGRESS</p>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" id="progress-bar">0%</div>
+                    </div>
+                </div>
+                
+                <div class="graph-container">
+                    <p>NODE TOPOLOGY</p>
+                    <img id="topology-graph" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Topology Graph">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

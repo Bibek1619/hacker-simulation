@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+}
+
+.terminal {
+    border: 2px solid #0f0;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px #0f0, inset 0 0 10px #0f0;
+}
+
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #0f0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px #0f0;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    background-color: black;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 250px;
+}
+
+button {
+    background-color: black;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 5px 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0f0;
+    color: black;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.blinking-cursor {
+    animation: blink 1s step-end infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.dashboard-grid {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.console {
+    flex: 2;
+    border: 1px solid #030;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #020202;
+    height: 100%;
+}
+
+.console p {
+    margin: 5px 0;
+}
+
+.console .warning {
+    color: #f00;
+    text-shadow: 0 0 5px #f00;
+}
+
+.side-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.progress-container {
+    border: 1px solid #030;
+    padding: 10px;
+}
+
+.progress-bar-bg {
+    background-color: #111;
+    border: 1px solid #0f0;
+    height: 25px;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #0f0;
+    height: 100%;
+    width: 0%;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 25px;
+    transition: width 0.5s ease;
+}
+
+.graph-container {
+    border: 1px solid #030;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-container img {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #0f0;
+}
